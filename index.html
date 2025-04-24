@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fantasy Champions - Personalizado</title>
+    <style>
+        /* ESTILO BÁSICO - Se reemplazará con un diseño más avanzado */
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #2b2d42;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+        }
+        .login-box {
+            max-width: 400px;
+            margin: auto;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #aaa;
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #ef233c;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #d90429;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Fantasy Champions - Login</h1>
+    </header>
+    <main>
+        <div class="login-box">
+            <h2>Iniciar sesión</h2>
+            <input type="text" id="username" placeholder="Usuario">
+            <input type="password" id="password" placeholder="Contraseña">
+            <button onclick="login()">Ingresar</button>
+        </div>
+    </main>
+
+    <script>
+        const USERS = {
+            "admin": "clave123"
+            // Aquí se agregarán los usuarios del fantasy (vos los cargás)
+        };
+
+        function login() {
+            const user = document.getElementById("username").value.trim();
+            const pass = document.getElementById("password").value.trim();
+
+            if (USERS[user] && USERS[user] === pass) {
+                alert("Bienvenido, " + user);
+                // Redirigir a panel principal
+            } else {
+                alert("Usuario o contraseña incorrectos.");
+            }
+        }
+    </script>
+</body>
+</html>
